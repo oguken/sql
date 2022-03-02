@@ -162,7 +162,6 @@ ON countries.code = cities.country_code
 JOIN countrylanguages 
 ON cities.country_code = countrylanguages.country_code;
 
-
 -- 問27
 -- 全ての有名人を出力してください。左側外部結合を使用して国名なし（country_codeがNULL）も表示してください。
 SELECT celebrities.name,countries.name
@@ -180,7 +179,6 @@ JOIN countrylanguages
 ON countries.code = countrylanguages.country_code
 WHERE countrylanguages.is_official = "T";
 
-
 -- 問29
 -- 全ての有名人の名前と国名をテーブル結合せずに出力してください。
 SELECT
@@ -194,7 +192,6 @@ WHERE
 countries.code = celebrities.country_code
 ) AS "国名"
 FROM celebrities;
-
 
 -- 問30
 -- 最年長が50歳以上かつ最年少が30歳以下の国を表示させてください。
@@ -211,7 +208,6 @@ FROM celebrities AS C3
 WHERE C1.country_code = C3.country_code) < 30
 GROUP BY country_code;
 
-
 -- 問31
 -- 1991年生まれと、1981年生まれの有名人が何人いるか調べてください。ただし、日付関数は使用せず、UNION句を使用してください。
 SELECT birth_year AS"誕生年", count(birth_year) AS"人数"
@@ -225,7 +221,6 @@ FROM celebrities
 WHERE birth LIKE "%1981%"
 GROUP BY birth) AS test
 GROUP BY birth_year;
-
 
 -- 問32
 -- 有名人の出身国の平均年齢を高い方から順に表示してください。ただし、FROM句はcountriesテーブルとしてください。
