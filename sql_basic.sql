@@ -41,8 +41,6 @@ FROM countries
 WHERE indep_year IS NULL;
 
 
-
-
 -- 問8
 -- 独立独立記念日がある国をすべて抽出してください。
 SELECT *
